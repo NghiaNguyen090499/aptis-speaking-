@@ -952,7 +952,7 @@
     </div>
 
     <script>
-        var isAuthenticated = {{ current_user.is_authenticated|tojson }};
+        const isAuthenticated = {% if current_user.is_authenticated %}true{% else %}false{% endif %};
     </script>
     <script>
         $(document).ready(function() {
