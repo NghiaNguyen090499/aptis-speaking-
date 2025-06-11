@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khung Mẫu Luyện Thi Aptis Speaking Part 4 (Phiên bản Mở rộng)</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.7;
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h1, h2, h3 {
+            color: #0056b3;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-top: 40px;
+        }
+        
+        h3 {
+            font-size: 1.4em;
+            color: #17a2b8;
+            border-bottom: none;
+            margin-top: 30px;
+        }
+        
+        h4 {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #343a40;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .intro-note {
+            background-color: #e2f3ff;
+            border-left: 5px solid #007bff;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            background-color: #fdfdfd;
+            margin-bottom: 8px;
+            padding: 12px;
+            border-left: 4px solid #17a2b8;
+            border-radius: 4px;
+            transition: all 0.2s ease-in-out;
+        }
+        
+        li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+
+        .sample-answer {
+            background-color: #fff9e6;
+            border: 1px solid #ffeeba;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 8px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        
+        .sample-answer:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .sample-answer:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        .sample-answer:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .sample-answer h4 {
+            margin-top: 0;
+            color: #856404;
+            border-bottom: 1px dashed #856404;
+            padding-bottom: 8px;
+        }
+        
+        .sample-answer p {
+            margin-bottom: 10px;
+        }
+        .sample-answer p:last-child {
+            margin-bottom: 0;
+        }
+
+        strong {
+            color: #28a745;
+            font-weight: 700;
+        }
+
+        code {
+            background-color: #e9ecef;
+            color: #c7254e;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 0.95em;
+            font-family: Consolas, 'Courier New', monospace;
+        }
+        
+        em {
+            color: #fd7e14;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: #007bff;
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            color: white;
+            font-size: 1.5em;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar-brand img {
+            height: 30px;
+            width: auto;
+        }
+
+        .navbar-menu {
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .navbar-item {
+            position: relative;
+        }
+
+        .navbar-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .navbar-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffd700;
+        }
+
+        .navbar-link.active {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffd700;
+        }
+
+        .navbar-link i {
+            font-size: 1.1em;
+        }
+
+        /* Mobile Menu Button */
+        .navbar-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Dark Mode Navbar Styles */
+        body.dark-mode .navbar {
+            background-color: #1a1a1a;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        body.dark-mode .navbar-link:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        body.dark-mode .navbar-link.active {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar-container {
+                padding: 0 15px;
+            }
+
+            .navbar-toggle {
+                display: block;
+            }
+
+            .navbar-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #007bff;
+                flex-direction: column;
+                padding: 10px;
+                gap: 10px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            .navbar-menu.active {
+                display: flex;
+            }
+
+            .navbar-item {
+                width: 100%;
+            }
+
+            .navbar-link {
+                width: 100%;
+                padding: 12px 15px;
+            }
+
+            body.dark-mode .navbar-menu {
+                background-color: #1a1a1a;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .language-toggle {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .language-toggle button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .language-toggle button:hover {
+            background-color: #0056b3;
+        }
+        .language-toggle button.active {
+            background-color: #28a745;
+        }
+
+        .play-audio {
+            margin-bottom: 10px;
+            padding: 8px 15px;
+            background-color: #17a2b8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .play-audio:hover {
+            background-color: #138496;
+        }
+
+        .practice-input {
+            width: 100%;
+            min-height: 100px;
+            padding: 10px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            margin-top: 10px;
+            resize: vertical;
+        }
+        .save-answer {
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .save-answer:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #dee2e6;
+            color: #6c757d;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar li {
+                margin: 10px 0;
+            }
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .container {
+            background-color: #2d2d2d;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        body.dark-mode h1, 
+        body.dark-mode h2, 
+        body.dark-mode h3 {
+            color: #4dabf7;
+        }
+
+        body.dark-mode .intro-note {
+            background-color: #2c3e50;
+            border-left: 5px solid #4dabf7;
+        }
+
+        body.dark-mode li {
+            background-color: #3d3d3d;
+            border-left: 4px solid #4dabf7;
+        }
+
+        body.dark-mode .sample-answer {
+            background-color: #2c3e50;
+            border: 1px solid #4dabf7;
+        }
+
+        body.dark-mode .practice-input {
+            background-color: #3d3d3d;
+            color: #e0e0e0;
+            border: 1px solid #4dabf7;
+        }
+
+        /* Loading State Styles */
+        .play-audio.loading {
+            position: relative;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .play-audio.loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            left: 50%;
+            margin: -10px 0 0 -10px;
+            border: 2px solid #ffffff;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background-color: #0056b3;
+        }
+
+        body.dark-mode .theme-toggle {
+            background-color: #4dabf7;
+        }
+
+        body.dark-mode .theme-toggle:hover {
+            background-color: #339af0;
+        }
+
+        /* Export/Import Buttons */
+        .data-actions {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .data-actions button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .data-actions button:hover {
+            background-color: #218838;
+        }
+
+        body.dark-mode .data-actions button {
+            background-color: #40c057;
+        }
+
+        body.dark-mode .data-actions button:hover {
+            background-color: #37b24d;
+        }
+
+        /* New translation layout styles */
+        .translation-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .translation-pair {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #17a2b8;
+        }
+
+        .translation-pair .en {
+            color: #0056b3;
+            font-weight: 500;
+        }
+
+        .translation-pair .vi {
+            color: #28a745;
+            font-style: italic;
+        }
+
+        body.dark-mode .translation-pair {
+            background-color: #2c3e50;
+            border-left-color: #4dabf7;
+        }
+
+        body.dark-mode .translation-pair .en {
+            color: #4dabf7;
+        }
+
+        body.dark-mode .translation-pair .vi {
+            color: #40c057;
+        }
+
+        .translation {
+            display: none;
+        }
+        .translation.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-brand">
+                <i class="fas fa-graduation-cap"></i>
+                Aptis Speaking
+            </a>
+            <button class="navbar-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="navbar-menu">
+                <li class="navbar-item">
+                    <a href="#part1" class="navbar-link">
+                        <i class="fas fa-book"></i>
+                        Nội dung 1
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#part2" class="navbar-link">
+                        <i class="fas fa-comments"></i>
+                        Nội dung 2
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#part3" class="navbar-link">
+                        <i class="fas fa-lightbulb"></i>
+                        Nội dung 3
+                    </a>
+                </li>
+                {% if current_user.is_authenticated %}
+                <li class="navbar-item">
+                    <a href="{{ url_for('logout') }}" class="navbar-link">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Đăng xuất
+                    </a>
+                </li>
+                {% else %}
+                <li class="navbar-item">
+                    <a href="{{ url_for('login') }}" class="navbar-link">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Đăng nhập
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Khung Mẫu Toàn Diện Luyện Thi Aptis Speaking Part 4</h1>
+        
+        <div class="intro-note">
+            <strong>Lưu ý:</strong> Trong bài thi Aptis Part 4 chuẩn, bạn có <strong>1 phút</strong> để trả lời mỗi câu hỏi. Cấu trúc và ví dụ dưới đây được xây dựng chi tiết để bạn có đủ ý tưởng và từ vựng, giúp bạn nói trôi chảy và thuyết phục trong khoảng thời gian đó.
+        </div>
+
+        <div id="part1" class="part-section">
+            <h2>Nội dung 1: Miêu tả một trải nghiệm cá nhân</h2>
+            <p>Mục tiêu: Kể một câu chuyện ngắn gọn, rõ ràng, mạch lạc về một trải nghiệm cá nhân liên quan đến chủ đề.</p>
+            
+            <h3>Cấu trúc & Ví dụ Mẫu câu</h3>
+            <div class="translation-container">
+                <div class="translation-pair">
+                    <div class="en">I'd like to talk about a time when I...</div>
+                    <div class="vi">Tôi muốn kể về một lần tôi...</div>
+                </div>
+                <div class="translation-pair">
+                    <div class="en">I'm going to describe a situation where I had to...</div>
+                    <div class="vi">Tôi sẽ mô tả một tình huống mà tôi phải...</div>
+                </div>
+                <div class="translation-pair">
+                    <div class="en">One of my most memorable experiences was when...</div>
+                    <div class="vi">Một trong những trải nghiệm đáng nhớ nhất của tôi là khi...</div>
+                </div>
+            </div>
+
+            <div class="sample-answer">
+                <h4>Bài mẫu 1: Kể về lần có nhiều lựa chọn</h4>
+                <button class="play-audio" data-text="I'd like to talk about a time when I had to make a very difficult decision because there were too many choices. This happened four years ago, right after I graduated from high school. It was a crucial moment because I had to choose a major for my university education. I was lucky enough to receive acceptance letters from three different universities, each with a very appealing major: one was Economics, another was Information Technology, and the last one was English Linguistics. The main problem was that each option had its own pros and cons. I remember feeling completely overwhelmed and confused. I spent almost two weeks weighing up the options, reading about career prospects, and even talking to students from those universities. In the end, I decided to follow my passion and chose Information Technology. It was a nerve-racking experience, but making that choice taught me how to be responsible for my own future. I felt a great sense of relief and confidence afterwards, and I've never regretted my decision.">Phát âm thanh</button>
+                <div class="content">
+                    <div class="translation-container">
+                        <div class="translation-pair">
+                            <div class="en"><strong>"I'd like to talk about a time when I had to make a very difficult decision because there were too many choices.</strong></div>
+                            <div class="vi"><strong>"Tôi muốn kể về một lần tôi phải đưa ra một quyết định rất khó khăn vì có quá nhiều lựa chọn.</strong></div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>This happened four years ago</strong>, right after I graduated from high school. <em>It was a crucial moment because I had to choose a major for my university education.</em> I was lucky enough to receive acceptance letters from three different universities, each with a very appealing major: one was <code>Economics</code>, another was <code>Information Technology</code>, and the last one was <code>English Linguistics</code>.</div>
+                            <div class="vi"><strong>Chuyện này xảy ra cách đây bốn năm</strong>, ngay sau khi tôi tốt nghiệp trung học. <em>Đó là một thời điểm quan trọng vì tôi phải chọn ngành học cho đại học.</em> Tôi may mắn nhận được thư trúng tuyển từ ba trường đại học khác nhau, mỗi trường có một ngành học rất hấp dẫn: một là <code>Kinh tế</code>, một là <code>Công nghệ thông tin</code>, và cái còn lại là <code>Ngôn ngữ Anh</code>.</div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en">The main problem was that each option had its own pros and cons. <em>I remember feeling completely <code>overwhelmed</code> and <code>confused</code>.</em> I spent almost two weeks <code>weighing up the options</code>, reading about career prospects, and even talking to students from those universities.</div>
+                            <div class="vi">Vấn đề chính là mỗi lựa chọn đều có ưu và nhược điểm riêng. <em>Tôi nhớ mình cảm thấy hoàn toàn <code>choáng ngợp</code> và <code>bối rối</code>.</em> Tôi đã dành gần hai tuần để <code>cân nhắc các lựa chọn</code>, tìm hiểu về triển vọng nghề nghiệp, và thậm chí nói chuyện với các sinh viên từ những trường đó.</div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>In the end, I decided to follow my passion and chose Information Technology.</strong> It was a <code>nerve-racking</code> experience, but making that choice taught me how to be responsible for my own future. <em>I felt a great sense of <code>relief</code> and <code>confidence</code> afterwards</em>, and I've never regretted my decision."</div>
+                            <div class="vi"><strong>Cuối cùng, tôi quyết định theo đam mê và chọn Công nghệ thông tin.</strong> Đó là một trải nghiệm <code>căng thẳng</code>, nhưng việc đưa ra lựa chọn đó đã dạy tôi cách chịu trách nhiệm cho tương lai của mình. <em>Tôi cảm thấy rất <code>nhẹ nhõm</code> và <code>tự tin</code> sau đó</em>, và tôi chưa bao giờ hối tiếc về quyết định của mình."</div>
+                        </div>
+                    </div>
+                </div>
+                <h4>Luyện tập của bạn</h4>
+                <textarea class="practice-input" placeholder="Viết câu trả lời của bạn tại đây..."></textarea>
+                <button class="save-answer">Lưu câu trả lời</button>
+            </div>
+            
+            <div class="sample-answer">
+                <h4>Bài mẫu 2: Học một kỹ năng mới (Học nấu ăn)</h4>
+                <button class="play-audio" data-text="I'm going to describe the time I decided to learn how to cook, which was a real challenge for me. It all started during the social distancing period about two years ago. I was living alone for the first time and got tired of eating instant noodles and takeaway food every day. I realized I needed a new, practical skill to take better care of myself. Initially, I thought it would be easy. I just followed recipes on YouTube. However, my first few attempts were a total disaster. I once confused salt with sugar, and another time, I almost burned a pan because I forgot to turn off the stove. I felt quite frustrated and wanted to give up. But I kept practicing every day. Gradually, I got the hang of it. Now, I can confidently cook a variety of delicious and healthy meals for myself. This experience made me feel incredibly independent and capable. It taught me that with patience, you can learn anything.">Phát âm thanh</button>
+                <div class="content">
+                    <div class="translation-container">
+                        <div class="translation-pair">
+                            <div class="en"><strong>"I'm going to describe the time I decided to learn how to cook, which was a real challenge for me.</strong></div>
+                            <div class="vi"><strong>"Tôi sẽ kể về lần tôi quyết định học cách nấu ăn, điều này thật sự là một thử thách đối với tôi.</strong></div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>It all started during the social distancing period about two years ago.</strong> I was living alone for the first time and got tired of eating instant noodles and takeaway food every day. I realized I needed a new, practical skill to take better care of myself.</div>
+                            <div class="vi"><strong>Mọi chuyện bắt đầu trong giai đoạn giãn cách xã hội khoảng hai năm trước.</strong> Tôi sống một mình lần đầu tiên và chán ngấy với việc ăn mì gói và đồ ăn mang về mỗi ngày. Tôi nhận ra mình cần một kỹ năng mới, thực tế để chăm sóc bản thân tốt hơn.</div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>Initially, I thought it would be easy.</strong> I just followed recipes on YouTube. <em>However, my first few attempts were a total disaster.</em> I once confused salt with sugar, and another time, I almost burned a pan because I forgot to turn off the stove. <em>I felt quite <code>frustrated</code> and wanted to give up.</em></div>
+                            <div class="vi"><strong>Ban đầu, tôi nghĩ nó sẽ dễ dàng.</strong> Tôi chỉ cần làm theo các công thức trên YouTube. <em>Tuy nhiên, vài lần thử đầu tiên của tôi là một thảm họa hoàn toàn.</em> Có lần tôi nhầm muối với đường, và lần khác tôi suýt làm cháy chảo vì quên tắt bếp. <em>Tôi cảm thấy rất <code>thất vọng</code> và muốn bỏ cuộc.</em></div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>But I kept practicing every day. Gradually, I got the hang of it.</strong> Now, I can confidently cook a variety of delicious and healthy meals for myself. <em>This experience made me feel incredibly <code>independent</code> and <code>capable</code>.</em> It taught me that with patience, you can learn anything.</div>
+                            <div class="vi"><strong>Nhưng tôi vẫn tiếp tục luyện tập mỗi ngày.</strong> Dần dần, tôi nắm bắt được cách làm. Bây giờ, tôi có thể tự tin nấu nhiều món ăn ngon và lành mạnh cho bản thân. <em>Trải nghiệm này khiến tôi cảm thấy vô cùng <code>độc lập</code> và <code>năng động</code></em> Nó dạy tôi rằng với sự kiên nhẫn, bạn có thể học bất cứ điều gì.</div>
+                        </div>
+                    </div>
+                </div>
+                <h4>Luyện tập của bạn</h4>
+                <textarea class="practice-input" placeholder="Viết câu trả lời của bạn tại đây..."></textarea>
+                <button class="save-answer">Lưu câu trả lời</button>
+            </div>
+
+            <div class="sample-answer">
+                <h4>Bài mẫu 3: Tham gia một cuộc thi marathon</h4>
+                <button class="play-audio" data-text="I'd like to talk about the time I participated in a marathon for the first time. This happened last year when I decided to challenge myself physically. I had never been a particularly athletic person, so signing up for a 10-kilometer marathon was a big step for me. I spent three months preparing, following a strict training schedule. The toughest part was waking up early every morning to run, especially in the cold weather. There were moments when I wanted to give up because my body was exhausted. In the end, I crossed the finish line after two hours. I felt a great sense of pride and achievement. This experience taught me that with determination, I could push my limits further than I ever imagined.">Phát âm thanh</button>
+                <div class="content">
+                    <div class="translation-container">
+                        <div class="translation-pair">
+                            <div class="en"><strong>"I'd like to talk about the time I participated in a marathon for the first time."</strong></div>
+                            <div class="vi"><strong>"Tôi muốn kể về lần đầu tiên tôi tham gia một cuộc thi marathon."</strong></div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>This happened last year</strong> when I decided to challenge myself physically. <em>I had never been a particularly athletic person</em>, so signing up for a 10-kilometer marathon was a big step for me.</div>
+                            <div class="vi"><strong>Chuyện này xảy ra vào năm ngoái</strong> khi tôi quyết định thử thách bản thân về mặt thể chất. <em>Tôi chưa bao giờ là một người đặc biệt năng động</em>, vì vậy việc đăng ký tham gia một cuộc marathon 10 km là một bước tiến lớn đối với tôi.</div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en">I spent three months preparing, following a strict training schedule. <em>The toughest part was waking up early every morning to run, especially in the cold weather.</em> There were moments when I wanted to give up because my body was exhausted.</div>
+                            <div class="vi">Tôi đã dành ba tháng để chuẩn bị, tuân theo một lịch trình luyện tập nghiêm ngặt. <em>Phần khó nhất là dậy sớm mỗi sáng để chạy, đặc biệt trong thời tiết lạnh giá.</em> Có những lúc tôi muốn bỏ cuộc vì cơ thể quá mệt mỏi.</div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>In the end, I crossed the finish line after two hours.</strong> <em>I felt an overwhelming sense of <code>pride</code> and <code>achievement</code>.</em> This experience taught me that with determination, I could push my limits further than I ever imagined.</div>
+                            <div class="vi"><strong>Cuối cùng, tôi đã cán đích sau hai tiếng.</strong> <em>Tôi cảm thấy một niềm <code>tự hào</code> và <code>thành tựu</code> to lớn.</em> Trải nghiệm này dạy tôi rằng với sự quyết tâm, tôi có thể vượt qua giới hạn của mình xa hơn những gì tôi từng tưởng tượng.</div>
+                        </div>
+                    </div>
+                </div>
+                <h4>Luyện tập của bạn</h4>
+                <textarea class="practice-input" placeholder="Viết câu trả lời của bạn tại đây..."></textarea>
+                <button class="save-answer">Lưu câu trả lời</button>
+            </div>
+        </div>
+
+        <div id="part2" class="part-section">
+            <h2>Nội dung 2: Miêu tả trải nghiệm khác và so sánh</h2>
+            <p>Mục tiêu: Mô tả ngắn gọn trải nghiệm thứ hai và tập trung vào việc so sánh/đối chiếu nó với trải nghiệm đầu tiên.</p>
+            
+            <h3>Cấu trúc & Ví dụ Mẫu câu</h3>
+            <div class="translation-container">
+                <div class="translation-pair">
+                    <div class="en">Now, I'd like to talk about a different kind of experience, which was when I...</div>
+                    <div class="vi">Bây giờ, tôi muốn mô tả một trải nghiệm khác, đó là khi...</div>
+                </div>
+                <div class="translation-pair">
+                    <div class="en">On another occasion, I experienced something quite different.</div>
+                    <div class="vi">Trên một sự kiện khác, tôi đã trải qua một trải nghiệm hoàn toàn khác.</div>
+                </div>
+                <div class="translation-pair">
+                    <div class="en">A different situation that comes to mind is when...</div>
+                    <div class="vi">Một tình huống khác đến tôi nghĩ đến là khi...</div>
+                </div>
+            </div>
+
+            <div class="sample-answer">
+                <h4>Bài mẫu 1: So sánh giữa "chọn lựa cá nhân" và "làm việc nhóm"</h4>
+                <button class="play-audio" data-text="Now, I'm going to describe a different situation, which was working on a group presentation last semester. My team had to prepare a 20-minute presentation on a complex topic, and it was a real test of our teamwork. The main difference between these two experiences was the nature of the decision-making. My university choice was a purely personal decision. In contrast, the team project required collaboration and compromise. Every decision had to be discussed and agreed upon by everyone. I had to persuade others, but also listen to their ideas. However, one thing that was similar is that both situations required careful problem-solving skills and made me feel a great sense of accomplishment in the end.">Phát âm thanh</button>
+                <div class="content">
+                    <div class="translation-container">
+                        <div class="translation-pair">
+                            <div class="en"><strong>"Now, I'm going to describe a different situation, which was working on a group presentation last semester.</strong> My team had to prepare a 20-minute presentation on a complex topic, and it was a real test of our <code>teamwork</code>.</div>
+                            <div class="vi"><strong>"Bây giờ, tôi sẽ mô tả một tình huống khác, đó là làm việc nhóm cho một bài thuyết trình học kỳ trước.</strong> Nhóm của tôi phải chuẩn bị một bài thuyết trình 20 phút về một chủ đề phức tạp, và đó là một bài kiểm tra thực sự cho <code>tinh thần làm việc nhóm</code>.</div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>The main difference between these two experiences was the nature of the decision-making.</strong> My university choice was a <code>purely personal</code> decision. <code>In contrast</code>, the team project required <code>collaboration</code> and <code>compromise</code>. Every decision had to be discussed and agreed upon by everyone. <em>I had to persuade others, but also listen to their ideas.</em></div>
+                            <div class="vi"><strong>Sự khác biệt chính giữa hai trải nghiệm này là bản chất của việc ra quyết định.</strong> Việc chọn trường đại học là một quyết định <code>hoàn toàn cá nhân</code>. <code>Ngược lại</code>, dự án nhóm yêu cầu <code>sự hợp tác</code> và <code>thỏa hiệp</code>. Mọi quyết định đều phải được thảo luận và đồng ý bởi tất cả mọi người. <em>Tôi phải thuyết phục người khác, nhưng cũng phải lắng nghe ý kiến của họ.</em></div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>However, one thing that was similar</strong> is that both situations required careful <code>problem-solving</code> skills and made me feel a great sense of <code>accomplishment</code> in the end.</div>
+                            <div class="vi"><strong>Tuy nhiên, một điểm tương đồng</strong> là cả hai tình huống đều đòi hỏi kỹ năng <code>giải quyết vấn đề</code> cẩn thận và khiến tôi cảm thấy một cảm giác <code>thành tựu</code> lớn vào cuối cùng.</div>
+                        </div>
+                    </div>
+                </div>
+                <h4>Luyện tập của bạn</h4>
+                <textarea class="practice-input" placeholder="Viết câu trả lời của bạn tại đây..."></textarea>
+                <button class="save-answer">Lưu câu trả lời</button>
+            </div>
+            
+            <div class="sample-answer">
+                <h4>Bài mẫu 2: So sánh giữa "học nấu ăn" và "học ngoại ngữ"</h4>
+                <button class="play-audio" data-text="Now, I'll compare the experience of learning to cook with another learning process, which is learning English. The most significant difference, for me, is the type of skill involved. Cooking is a very practical, hands-on skill. You learn by following steps, and you get an immediate, physical result – a dish you can see, smell, and taste. On the other hand, learning a language like English is a more intellectual and abstract process. It involves memorizing vocabulary, understanding grammar rules, and practicing communication. Another difference is how you see progress. With cooking, your improvement can be quite visible and fast. You succeed or fail with each dish. Unlike cooking, progress in learning a language is often very slow and gradual. Sometimes you don't even notice you're getting better until months later. However, the most important similarity is that both require a great deal of discipline and consistency. You can't master either one overnight. Both also require you to be unafraid of making mistakes and learning from them.">Phát âm thanh</button>
+                <div class="content">
+                    <div class="translation-container">
+                        <div class="translation-pair">
+                            <div class="en"><strong>"Now, I'll compare the experience of learning to cook with another learning process, which is learning English.</strong></div>
+                            <div class="vi"><strong>"Bây giờ, tôi sẽ so sánh trải nghiệm học nấu ăn với một quá trình học tập khác, đó là học tiếng Anh.</strong></div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>The most significant difference, for me, is the type of skill involved.</strong> Cooking is a very <code>practical</code>, <code>hands-on</code> skill. You learn by following steps, and you get an immediate result – a dish you can see, smell, and taste. <code>On the other hand</code>, learning a language like English is a more <code>intellectual</code> and <code>abstract</code> process. It involves memorizing vocabulary, understanding grammar rules, and practicing communication.</div>
+                            <div class="vi"><strong>Sự khác biệt lớn nhất, đối với tôi, là loại kỹ năng liên quan.</strong> Nấu ăn là một kỹ năng rất <code>thực tế</code>, <code>thực hành</code>. Bạn học bằng cách làm theo các bước, và bạn nhận được kết quả ngay lập tức – một món ăn mà bạn có thể nhìn, ngửi và nếm. <code>Mặt khác</code>, học một ngôn ngữ như tiếng Anh là một quá trình <code>tri thức</code> và <code>trừu tượng</code> hơn. Nó bao gồm việc ghi nhớ từ vựng, hiểu các quy tắc ngữ pháp và luyện tập giao tiếp.</div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>Another difference is how you see progress.</strong> With cooking, <em>your improvement can be quite visible and fast.</em> You succeed or fail with each dish. <code>Unlike cooking</code>, progress in learning a language is often <em>very slow and gradual</em>. Sometimes you don't even notice you're getting better until months later.</div>
+                            <div class="vi"><strong>Một sự khác biệt khác là cách bạn thấy sự tiến bộ.</strong> Với nấu ăn, <em>sự cải thiện của bạn có thể khá rõ ràng và nhanh chóng.</em> Bạn thành công hoặc thất bại với mỗi món ăn.</div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>However, the most important similarity is that</strong> both require a great deal of <code>discipline</code> and <code>consistency</code>. You can't master either one overnight. Both also require you to be unafraid of making mistakes and learning from them.</div>
+                            <div class="vi"><strong>Tuy nhiên, điểm tương đồng quan trọng nhất là</strong> cả hai đều đòi hỏi rất nhiều <code>kỷ luật</code> và <code>sự kiên trì</code>. Bạn không thể thành thạo cả hai chỉ qua một đêm. Cả hai cũng yêu cầu bạn không sợ mắc sai lầm và học hỏi từ chúng.</div>
+                        </div>
+                    </div>
+                </div>
+                <h4>Luyện tập của bạn</h4>
+                <textarea class="practice-input" placeholder="Viết câu trả lời của bạn tại đây..."></textarea>
+                <button class="save-answer">Lưu câu trả lời</button>
+            </div>
+
+            <div class="sample-answer">
+                <h4>Bài mẫu 3: So sánh giữa "chạy marathon" và "học chơi guitar"</h4>
+                <button class="play-audio" data-text="Now, I'd like to describe a different experience, which was learning to play the guitar. The biggest difference between running a marathon and learning the guitar is the type of effort required. Running was a physical challenge that demanded stamina and endurance, while learning the guitar was more of a mental and creative process that required patience and coordination. However, both experiences were similar in that they pushed me out of my comfort zone and taught me the value of perseverance. In both cases, I had to practice consistently to see progress.">Phát âm thanh</button>
+                <div class="content">
+                    <div class="translation-container">
+                        <div class="translation-pair">
+                            <div class="en"><strong>"Now, I'd like to describe a different experience, which was learning to play the guitar."</strong></div>
+                            <div class="vi"><strong>"Bây giờ, tôi muốn mô tả một trải nghiệm khác, đó là học chơi guitar."</strong></div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>The biggest difference</strong> between running a marathon and learning the guitar is the type of effort required. Running was a <code>physical challenge</code> that demanded stamina and endurance, while learning the guitar was more of a <code>mental and creative</code> process that required patience and coordination.</div>
+                            <div class="vi"><strong>Sự khác biệt lớn nhất</strong> giữa chạy marathon và học guitar là loại nỗ lực cần thiết. Chạy bộ là một <code>thử thách thể chất</code> đòi hỏi sức bền và sự dẻo dai, trong khi học guitar là một quá trình <code>tinh thần và sáng tạo</code> đòi hỏi sự kiên nhẫn và phối hợp.</div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>However, both experiences were similar</strong> in that they pushed me out of my comfort zone and taught me the value of <code>perseverance</code>. In both cases, I had to practice consistently to see progress.</div>
+                            <div class="vi"><strong>Tuy nhiên, cả hai trải nghiệm đều tương đồng</strong> ở chỗ chúng khiến tôi bước ra khỏi vùng an toàn và dạy tôi giá trị của <code>sự kiên trì</code>. Trong cả hai trường hợp, tôi đều phải luyện tập đều đặn để thấy tiến bộ.</div>
+                        </div>
+                    </div>
+                </div>
+                <h4>Luyện tập của bạn</h4>
+                <textarea class="practice-input" placeholder="Viết câu trả lời của bạn tại đây..."></textarea>
+                <button class="save-answer">Lưu câu trả lời</button>
+            </div>
+        </div>
+
+        <div id="part3" class="part-section">
+            <h2>Nội dung 3: Nêu quan điểm cá nhân</h2>
+            <p>Mục tiêu: Trình bày suy nghĩ cá nhân một cách logic, có cấu trúc và dẫn chứng thuyết phục.</p>
+            
+            <h3>Cấu trúc & Ví dụ Mẫu câu</h3>
+            <div class="translation-container">
+                <div class="translation-pair">
+                    <div class="en">In my opinion, ...</div>
+                    <div class="vi">Theo quan điểm của tôi, ...</div>
+                </div>
+                <div class="translation-pair">
+                    <div class="en">I believe that...</div>
+                    <div class="vi">Tôi tin rằng...</div>
+                </div>
+                <div class="translation-pair">
+                    <div class="en">From my perspective, ...</div>
+                    <div class="vi">Từ góc nhìn của tôi, ...</div>
+                </div>
+                <div class="translation-pair">
+                    <div class="en">As I see it, ...</div>
+                    <div class="vi">Như tôi thấy, ...</div>
+                </div>
+                <div class="translation-pair">
+                    <div class="en">It seems to me that it's crucial to...</div>
+                    <div class="vi">Điều đó có vẻ quan trọng là...</div>
+                </div>
+                <div class="translation-pair">
+                    <div class="en">If you ask me, I would say that...</div>
+                    <div class="vi">Nếu bạn hỏi tôi, tôi sẽ nói rằng...</div>
+                </div>
+                <div class="translation-pair">
+                    <div class="en">I strongly hold the view that...</div>
+                    <div class="vi">Tôi tin rằng...</div>
+                </div>
+            </div>
+
+            <div class="sample-answer">
+                <h4>Bài mẫu 1: Quan điểm về việc có quá nhiều lựa chọn</h4>
+                <button class="play-audio" data-text="In my opinion, while having choices is a symbol of freedom, having too many choices can actually be a negative thing. Firstly, it can lead to something called 'analysis paralysis', which means you overthink so much that you end up not making a decision at all. The fear of making the wrong choice can be crippling. For example, when you go to a supermarket and see 30 different types of cereal, you might spend 10 minutes just trying to compare them and end up buying nothing. It wastes time and creates unnecessary stress. Secondly, even after making a choice, having too many options can lead to dissatisfaction. You might always wonder if you should have picked another option. For instance, after buying a new smartphone, you might keep thinking about the other models you didn't choose, wondering if they were better. This can prevent you from fully enjoying what you have. So, to sum up, I believe that having a limited number of good options is much better than having an overwhelming number of choices. The key is quality, not quantity.">Phát âm thanh</button>
+                <div class="content">
+                    <div class="translation-container">
+                        <div class="translation-pair">
+                            <div class="en"><strong>"In my opinion, while having choices is a symbol of freedom, having too many choices can actually be a negative thing."</strong></div>
+                            <div class="vi"><strong>"Theo quan điểm của tôi, mặc dù có nhiều lựa chọn là biểu tượng của tự do, nhưng có quá nhiều lựa chọn thực sự có thể là một điều tiêu cực."</strong></div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>Firstly, it can lead to something called 'analysis paralysis',</strong> which means you overthink so much that you end up not making a decision at all. The fear of making the wrong choice can be <code>crippling</code>.</div>
+                            <div class="vi"><strong>Thứ nhất, nó có thể dẫn đến cái gọi là 'tê liệt phân tích',</strong> nghĩa là bạn suy nghĩ quá nhiều đến mức cuối cùng không đưa ra quyết định nào cả. Nỗi sợ đưa ra lựa chọn sai lầm có thể <code>làm tê liệt</code>.</div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>For example, when you go to a supermarket and see 30 different types of cereal, you might spend 10 minutes just trying to compare them and end up buying nothing.</strong> It wastes time and creates unnecessary stress.</div>
+                            <div class="vi"><strong>Ví dụ, khi bạn đến siêu thị và thấy 30 loại ngũ cốc khác nhau, bạn có thể mất 10 phút chỉ để so sánh chúng và cuối cùng không mua gì.</strong> Điều này lãng phí thời gian và tạo ra căng thẳng không cần thiết.</div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>Secondly, even after making a choice, having too many options can lead to dissatisfaction.</strong> You might always wonder if you should have picked another option. For instance, after buying a new smartphone, you might keep thinking about the other models you didn't choose, wondering if they were better. This can prevent you from fully enjoying what you have.</div>
+                            <div class="vi"><strong>Thứ hai, ngay cả sau khi đưa ra lựa chọn, có quá nhiều lựa chọn có thể dẫn đến sự không hài lòng.</strong> Bạn có thể luôn tự hỏi liệu mình có nên chọn một lựa chọn khác hay không.</div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>So, to sum up, I believe that having a limited number of good options is much better than having an overwhelming number of choices.</strong> The key is quality, not quantity.</div>
+                            <div class="vi"><strong>Tóm lại, tôi tin rằng có một số lượng giới hạn các lựa chọn tốt sẽ tốt hơn nhiều so với việc có quá nhiều lựa chọn áp đảo.</strong> Chìa khóa là chất lượng, không phải số lượng.</div>
+                        </div>
+                    </div>
+                </div>
+                <h4>Luyện tập của bạn</h4>
+                <textarea class="practice-input" placeholder="Viết câu trả lời của bạn tại đây..."></textarea>
+                <button class="save-answer">Lưu câu trả lời</button>
+            </div>
+            
+            <div class="sample-answer">
+                <h4>Bài mẫu 2: Quan điểm về tầm quan trọng của việc học hỏi suốt đời</h4>
+                <button class="play-audio" data-text="From my perspective, lifelong learning is absolutely essential for everyone in the modern world. The first major reason is for professional development. The job market is changing at an incredible speed due to technology. To stay relevant and competitive, people must constantly update their skills. A clear example of this is an accountant who, 20 years ago, only needed to be good with numbers. Today, they also need to know how to use data analysis software and cloud-based platforms. Another key point is that learning is crucial for personal growth and mental health. Keeping your mind active by learning new things, like a musical instrument or a new language, can improve memory and cognitive function. It's also a great way to reduce stress and find new hobbies. For instance, learning about a different culture can make you more open-minded and empathetic. Therefore, I strongly believe that education shouldn't stop when we leave school. It is a continuous journey that not only boosts our careers but also enriches our lives in countless ways.">Phát âm thanh</button>
+                <div class="content">
+                    <div class="translation-container">
+                        <div class="translation-pair">
+                            <div class="en"><strong>"From my perspective, lifelong learning is absolutely essential for everyone in the modern world."</strong></div>
+                            <div class="vi"><strong>"Từ góc nhìn của tôi, học tập suốt đời là điều hoàn toàn cần thiết cho mọi người trong thế giới hiện đại.</strong></div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>The first major reason is for professional development.</strong> The job market is changing at an incredible speed due to technology. To stay <code>relevant</code> and <code>competitive</code>, people must constantly update their skills.</div>
+                            <div class="vi"><strong>Lý do chính đầu tiên là để phát triển nghề nghiệp.</strong> Thị trường việc làm đang thay đổi với tốc độ đáng kinh ngạc do công nghệ.</div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>A clear example of this is</strong> an accountant who, 20 years ago, only needed to be good with numbers. Today, they also need to know how to use data analysis software and cloud-based platforms.</div>
+                            <div class="vi"><strong>Một ví dụ rõ ràng về điều này là</strong> một kế toán, cách đây 20 năm, chỉ cần giỏi về số liệu. Ngày nay, họ cũng cần biết cách sử dụng phần mềm phân tích dữ liệu và các nền tảng dựa trên đám mây.</div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>Another key point is that learning is crucial for personal growth and mental health.</strong> Keeping your mind active by learning new things, like a musical instrument or a new language, can improve memory and cognitive function.</div>
+                            <div class="vi"><strong>Một điểm quan trọng khác là học tập rất quan trọng cho sự phát triển cá nhân và sức khỏe tinh thần.</strong> Giữ cho tâm trí năng động bằng cách học những điều mới, như chơi nhạc cụ hoặc một ngôn ngữ mới, có thể cải thiện trí nhớ và chức năng nhận thức.</div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>It's also a great way to reduce stress and find new hobbies.</strong> For instance, learning about a different culture can make you more <code>open-minded</code> and <code>empathetic</code>.</div>
+                            <div class="vi"><strong>Đây cũng là một cách tuyệt vời để giảm căng thẳng và tìm kiếm sở thích mới.</strong> Chẳng hạn, tìm hiểu về một nền văn hóa khác có thể khiến bạn trở nên <code>cởi mở</code> và <code>thấu cảm</code> hơn.</div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>Therefore, I strongly believe that education shouldn't stop when we leave school.</strong> It is a continuous journey that not only boosts our careers but also enriches our lives in countless ways.</div>
+                            <div class="vi"><strong>Do đó, tôi mạnh mẽ tin rằng giáo dục không nên dừng lại khi chúng ta rời trường học.</strong> Đó là một hành trình liên tục không chỉ thúc đẩy sự nghiệp của chúng ta mà còn làm phong phú cuộc sống của chúng ta theo vô số cách.</div>
+                        </div>
+                    </div>
+                </div>
+                <h4>Luyện tập của bạn</h4>
+                <textarea class="practice-input" placeholder="Viết câu trả lời của bạn tại đây..."></textarea>
+                <button class="save-answer">Lưu câu trả lời</button>
+            </div>
+
+            <div class="sample-answer">
+                <h4>Bài mẫu 3: Quan điểm về việc cân bằng giữa công việc và cuộc sống</h4>
+                <button class="play-audio" data-text="In my opinion, maintaining a work-life balance is essential for both mental health and productivity. Firstly, overworking can lead to burnout. If you spend all your time working without taking breaks, you're likely to feel exhausted and lose motivation. For example, I have a friend who used to work 12 hours a day and ended up feeling depressed. Secondly, spending time on hobbies or with family helps recharge your energy. A good illustration is when I take time to go hiking on weekends; I return to work feeling refreshed and more focused. In conclusion, a balanced lifestyle leads to better performance in both work and personal life.">Phát âm thanh</button>
+                <div class="content">
+                    <div class="translation-container">
+                        <div class="translation-pair">
+                            <div class="en"><strong>"In my opinion, maintaining a work-life balance is essential for both mental health and productivity."</strong></div>
+                            <div class="vi"><strong>"Theo quan điểm của tôi, việc duy trì cân bằng giữa công việc và cuộc sống là rất cần thiết cho cả sức khỏe tinh thần và năng suất.</strong></div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>Firstly, overworking can lead to burnout.</strong> If you spend all your time working without taking breaks, you're likely to feel exhausted and lose motivation.</div>
+                            <div class="vi"><strong>Thứ nhất, làm việc quá sức có thể dẫn đến kiệt sức.</strong> Nếu bạn dành hết thời gian để làm việc mà không nghỉ ngơi, bạn có thể cảm thấy mệt mỏi và mất động lực.</div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>For example, I have a friend who used to work 12 hours a day and ended up feeling depressed.</strong></div>
+                            <div class="vi"><div class="en"><strong>Tôi có một người bạn từng làm việc 12 tiếng mỗi ngày và cuối cùng cảm thấy trầm cảm.</strong></div></div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>Secondly, spending time on hobbies or with family helps recharge your energy.</strong> A good illustration is when I take time to go hiking on weekends; I return to work feeling refreshed and more focused.</div>
+                            <div class="vi"><strong>Thứ hai, dành thời gian cho sở thích hoặc gia đình giúp nạp lại năng lượng.</strong> Một ví dụ rõ ràng là khi tôi dành thời gian đi leo núi vào cuối tuần; tôi trở lại làm việc với cảm giác sảng khoái và tập trung hơn.</div>
+                        </div>
+                        <div class="translation-pair">
+                            <div class="en"><strong>In conclusion, a balanced lifestyle leads to better performance in both work and personal life.</strong></div>
+                            <div class="vi"><strong>Tóm lại, một lối sống cân bằng dẫn đến hiệu suất tốt hơn trong cả công việc và cuộc sống cá nhân.</strong></div>
+                        </div>
+                    </div>
+                </div>
+                <h4>Luyện tập của bạn</h4>
+                <textarea class="practice-input" placeholder="Viết câu trả lời của bạn tại đây..."></textarea>
+                <button class="save-answer">Lưu câu trả lời</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>Chúc bạn luyện tập hiệu quả và đạt kết quả cao trong kỳ thi Aptis!</p>
+        </footer>
+    </div>
+
+    <button class="theme-toggle">🌙 Dark Mode</button>
+    <div class="data-actions">
+        <button id="exportBtn">📤 Export Answers</button>
+        <button id="importBtn">📥 Import Answers</button>
+        <input type="file" id="importFile" accept=".json" style="display: none;">
+    </div>
+
+    <script>
+        var isAuthenticated = {{ current_user.is_authenticated|tojson }};
+    </script>
+    <script>
+        $(document).ready(function() {
+            // Text-to-speech with loading state
+            $('.play-audio').click(function() {
+                var button = $(this);
+                var text = button.data('text');
+                
+                // Add loading state
+                button.addClass('loading');
+                
+                var utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'en-US';
+                
+                // Remove loading state when speech ends
+                utterance.onend = function() {
+                    button.removeClass('loading');
+                };
+                
+                // Remove loading state if there's an error
+                utterance.onerror = function() {
+                    button.removeClass('loading');
+                    alert('Error playing audio. Please try again.');
+                };
+                
+                window.speechSynthesis.speak(utterance);
+            });
+
+            // Save answer with Firebase
+            $('.save-answer').click(function() {
+                if (!isAuthenticated) {
+                    alert('Vui lòng đăng nhập để lưu câu trả lời.');
+                    return;
+                }
+
+                var textarea = $(this).prev('.practice-input');
+                var answer = textarea.val();
+                var key = $(this).closest('.sample-answer').find('h4').first().text();
+                
+                if (answer.trim() === '') {
+                    alert('Vui lòng nhập câu trả lời trước khi lưu.');
+                    return;
+                }
+                
+                $.ajax({
+                    url: '/save_answer',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        key: key,
+                        text: answer
+                    }),
+                    success: function(response) {
+                        if (response.success) {
+                            alert('Câu trả lời đã được lưu!');
+                        }
+                    },
+                    error: function() {
+                        alert('Có lỗi xảy ra khi lưu câu trả lời. Vui lòng thử lại.');
+                    }
+                });
+            });
+
+            // Load saved answers from Firebase
+            if (isAuthenticated) {
+                $.get('/get_answers', function(answers) {
+                    Object.keys(answers).forEach(function(key) {
+                        var textarea = $('.practice-input').filter(function() {
+                            return $(this).closest('.sample-answer').find('h4').first().text() === key;
+                        });
+                        if (textarea.length) {
+                            textarea.val(answers[key]);
+                        }
+                    });
+                });
+            }
+
+            // Dark mode toggle
+            $('.theme-toggle').click(function() {
+                $('body').toggleClass('dark-mode');
+                var isDarkMode = $('body').hasClass('dark-mode');
+                $(this).text(isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode');
+                localStorage.setItem('darkMode', isDarkMode);
+            });
+
+            // Load dark mode preference
+            if (localStorage.getItem('darkMode') === 'true') {
+                $('body').addClass('dark-mode');
+                $('.theme-toggle').text('☀️ Light Mode');
+            }
+
+            // Export answers
+            $('#exportBtn').click(function() {
+                var answers = {};
+                $('.practice-input').each(function() {
+                    var key = $(this).closest('.sample-answer').find('h4').first().text();
+                    var value = $(this).val();
+                    if (value.trim() !== '') {
+                        answers[key] = value;
+                    }
+                });
+
+                if (Object.keys(answers).length === 0) {
+                    alert('No answers to export.');
+                    return;
+                }
+
+                var dataStr = JSON.stringify(answers, null, 2);
+                var dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+                
+                var exportFileDefaultName = 'aptis_answers.json';
+                
+                var linkElement = document.createElement('a');
+                linkElement.setAttribute('href', dataUri);
+                linkElement.setAttribute('download', exportFileDefaultName);
+                linkElement.click();
+            });
+
+            // Import answers
+            $('#importBtn').click(function() {
+                $('#importFile').click();
+            });
+
+            $('#importFile').change(function(e) {
+                var file = e.target.files[0];
+                if (!file) return;
+
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        var answers = JSON.parse(e.target.result);
+                        
+                        if (!confirm('This will overwrite your current answers. Continue?')) {
+                            return;
+                        }
+
+                        Object.keys(answers).forEach(function(key) {
+                            var textarea = $('.practice-input').filter(function() {
+                                return $(this).closest('.sample-answer').find('h4').first().text() === key;
+                            });
+                            if (textarea.length) {
+                                textarea.val(answers[key]);
+                                localStorage.setItem('answer_' + key, answers[key]);
+                            }
+                        });
+
+                        alert('Answers imported successfully!');
+                    } catch (error) {
+                        alert('Error importing file. Please make sure it\'s a valid JSON file.');
+                    }
+                };
+                reader.readAsText(file);
+            });
+
+            // Mobile menu toggle
+            $('.navbar-toggle').click(function() {
+                $('.navbar-menu').toggleClass('active');
+            });
+
+            // Close mobile menu when clicking outside
+            $(document).click(function(e) {
+                if (!$(e.target).closest('.navbar').length) {
+                    $('.navbar-menu').removeClass('active');
+                }
+            });
+
+            // Active link highlighting
+            $('.navbar-link').click(function() {
+                $('.navbar-link').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            // Smooth scrolling
+            $('.navbar-link').click(function(e) {
+                e.preventDefault();
+                var target = $(this).attr('href');
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top - 70
+                }, 500);
+                $('.navbar-menu').removeClass('active');
+            });
+
+            // Highlight active section on scroll
+            $(window).scroll(function() {
+                var scrollPosition = $(window).scrollTop();
+                
+                $('.part-section').each(function() {
+                    var currentSection = $(this);
+                    var sectionTop = currentSection.offset().top - 100;
+                    var sectionBottom = sectionTop + currentSection.height();
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        var currentId = currentSection.attr('id');
+                        $('.navbar-link').removeClass('active');
+                        $('.navbar-link[href="#' + currentId + '"]').addClass('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
