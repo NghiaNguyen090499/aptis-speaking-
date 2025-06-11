@@ -146,4 +146,4 @@ sudo systemctl enable nginx
 
 ## Đóng góp
 
-Mọi đóng góp đều được hoan nghênh! Vui lòng tạo issue hoặc pull request để đóng góp. 
+Mọi đóng góp đều được hoan nghênh! Vui lòng tạo issue hoặc pull request để đóng góp.
